@@ -2,32 +2,52 @@ import React from "react";
 import Letter from "./Letter";
 
 function Board() {
-
-  // const createRows = () => {
-  //   for (let i = 0; i < 6; i++) {
-  //     return (
-  //       <div className='row'>
-  //         <Letter letterPos={0} attemptVal={i} />
-  //         <Letter letterPos={1} attemptVal={i} />
-  //         <Letter letterPos={2} attemptVal={i} />
-  //         <Letter letterPos={3} attemptVal={i} />
-  //         <Letter letterPos={4} attemptVal={i} />
-  //       </div>
-  //     );
-  //   }
-  // };
-
   return (
     <div className="board">
       {" "}
       <div className="row">
         <Letter letterPos={0} attemptVal={0} />
-        <Letter letterPos={1} attemptVal={0} />
-        <Letter letterPos={2} attemptVal={0} />
-        <Letter letterPos={3} attemptVal={0} />
-        <Letter letterPos={4} attemptVal={0} />
+        <Letter letterPos={1} attemptVal={0} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={0} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={0} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={0} style={{ animationDelay: '1.2s' }} />
       </div>
       <div className="row">
+        <Letter letterPos={0} attemptVal={1} />
+        <Letter letterPos={1} attemptVal={1} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={1} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={1} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={1} style={{ animationDelay: '1.2s' }} />
+      </div>
+      <div className="row">
+        <Letter letterPos={0} attemptVal={2} />
+        <Letter letterPos={1} attemptVal={2} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={2} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={2} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={2} style={{ animationDelay: '1.2s' }} />
+      </div>
+      <div className="row">
+        <Letter letterPos={0} attemptVal={3} />
+        <Letter letterPos={1} attemptVal={3} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={3} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={3} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={3} style={{ animationDelay: '1.2s' }} />
+      </div>
+      <div className="row">
+        <Letter letterPos={0} attemptVal={4} />
+        <Letter letterPos={1} attemptVal={4} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={4} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={4} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={4} style={{ animationDelay: '1.2s' }} />
+      </div>
+      <div className="row">
+        <Letter letterPos={0} attemptVal={5} />
+        <Letter letterPos={1} attemptVal={5} style={{ animationDelay: '300ms' }} />
+        <Letter letterPos={2} attemptVal={5} style={{ animationDelay: '600ms' }} />
+        <Letter letterPos={3} attemptVal={5} style={{ animationDelay: '900ms' }} />
+        <Letter letterPos={4} attemptVal={5} style={{ animationDelay: '1.2s' }} />
+      </div>
+      {/* <div className="row">
         <Letter letterPos={0} attemptVal={1} />
         <Letter letterPos={1} attemptVal={1} />
         <Letter letterPos={2} attemptVal={1} />
@@ -61,8 +81,7 @@ function Board() {
         <Letter letterPos={2} attemptVal={5} />
         <Letter letterPos={3} attemptVal={5} />
         <Letter letterPos={4} attemptVal={5} />
-      </div>
-      {/* {createRows()} */}
+      </div> */}
     </div>
   );
 }

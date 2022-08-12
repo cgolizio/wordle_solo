@@ -5,11 +5,13 @@ import { boardDefault, generateWordSet } from "./helpers/Word";
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
 import GameOver from "./components/GameOver";
+
 export const MainContext = createContext();
 
 function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
+  const [guessedWord, setGuessedWord] = useState("");
   const [wordSet, setWordSet] = useState(new Set());
   const [correctWord, setCorrectWord] = useState("");
   const [disabledLetters, setDisabledLetters] = useState([]);
@@ -32,7 +34,7 @@ function App() {
 
     let currWord = "";
     for (let i = 0; i < 5; i++) {
-      currWord += board[currAttempt.attempt][i];
+      setGuessedWord((currWord += board[currAttempt.attempt][i]));
     }
     if (wordSet.has(currWord.toLowerCase())) {
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
@@ -44,12 +46,19 @@ function App() {
       setGameOver({ gameOver: true, guessedWord: true });
       return;
     }
-    console.log(currAttempt);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
       return;
     }
   };
+
+  useEffect(() => {
+    // if (!guessedWord) return;
+    if (guessedWord) {
+      guessedWord.toLowerCase() === correctWord &&
+        setGameOver({ gameOver: true, guessedWord: true });
+    }
+  }, [guessedWord, correctWord]);
 
   const onDelete = () => {
     if (currAttempt.letter === 0) return;

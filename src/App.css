@@ -38,9 +38,8 @@ nav h1 {
 }
 
 .board {
-  width: 450px;
-  height: 550px;
-  border: 1px solid black;
+  width: 37rem;
+  height: 50rem;
   display: flex;
   flex-direction: column;
 }
@@ -63,9 +62,10 @@ nav h1 {
   font-weight: bolder;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  animation-delay: calc(attr(order) * 150ms);
 }
 
-#correct {
+/* #correct {
   background-color: #528d4e;
 }
 
@@ -75,6 +75,39 @@ nav h1 {
 
 #error {
   background-color: #3a393c;
+} */
+
+@keyframes flipcard {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+  }
+
+  40% {
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  70% {
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+}
+
+#correct {
+  background-color: #528d4e;
+  animation: flipcard 2s ease;
+}
+
+#almost {
+  background-color: #b49f39;
+  animation: flipcard 2s ease;
+}
+
+#error {
+  background-color: #3a393c;
+  animation: flipcard 2s ease;
 }
 
 .keyboard {
@@ -128,4 +161,13 @@ nav h1 {
 
 #disabled {
   background-color: #3a393c;
+}
+
+.testing {
+  height: 30rem;
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
